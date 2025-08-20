@@ -1,8 +1,8 @@
 body {
-  background-color: #121212;
   color: white;
-  font-family: sans-serif;
-  padding: 20px;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 14px;
+  padding: 10px;
 }
 
 .flex-container {
@@ -12,7 +12,14 @@ body {
   height: 300px;
 }
 
+.box:hover {
+  transform: scale(1.1);
+  transition: 0.3s ease;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.6)
+}
+
 .box {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   width: 200px;
   height: 100px;
   display: flex;
@@ -20,17 +27,27 @@ body {
   align-items: center;
   font-weight: bold;
   border-radius: 8px;
+  text-transform: uppercase;
+  text-align: center;
+  word-wrap: break-word;
+  white-space: normal;
+  padding: 10px;
 }
 
 .red {
-  background-color: red;
+  background-color: blue;
+  color: yellow;
+  border: 5px solid green;
 }
 
 .yellow {
   background-color: yellow;
-  color: black;
+  color: red;
+  border: 5px solid red;
 }
 
 .green {
   background-color: green;
+  color: black;
+  border: solid yellow;
 }
