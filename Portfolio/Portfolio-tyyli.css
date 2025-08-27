@@ -164,6 +164,7 @@ footer {
   justify-content: center;
   opacity: 0;
   transition: opacity .25s ease;
+  pointer-events: none;
 }
 
 .card:hover .overlay { opacity: 1; }
@@ -174,3 +175,4 @@ footer {
   color: #e6e6e6;
   text-align: center;
 }
+
