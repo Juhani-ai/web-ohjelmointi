@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <title>Neonin takana on yö</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Orbitron', sans-serif;
+      background-color: #0c0c0c;
+      color: #eee;
+    }
+
+    .container {
+      display: grid;
+      grid-template-areas:
+        "header header"
+        "sidebar main"
+        "footer footer";
+      grid-template-columns: 180px 1fr;
+      grid-template-rows: auto 1fr auto;
+      min-height: 100vh;
+    }
+
+    header {
+      grid-area: header;
+      text-align: center;
+      padding: 20px;
+      background: #111;
+      color: #00ffee;
+      font-size: 2rem;
+    }
+
+    .sidebar {
+      grid-area: sidebar;
+      background: #121212;
+      padding-top: 30px;
+      border-right: 1px solid #333;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .sidebar li {
+      margin: 15px 0;
+    }
+
+    .sidebar a {
+      color: #00ffee;
+      text-decoration: none;
+      display: block;
+      padding: 10px;
+      transition: 0.3s;
+    }
+
+    .sidebar a:hover {
+      background: #1a1a1a;
+      color: #ff00cc;
+    }
+
+    main {
+      grid-area: main;
+      padding: 30px;
+    }
+
+    .content {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .left {
+      flex: 2;
+      min-width: 280px;
+    }
+
+    .right {
+      flex: 1;
+      min-width: 220px;
+    }
+
+    .right img {
+      max-width: 75%;
+      border-radius: 8px;
+      box-shadow: 0 0 20px #ff00cc;
+      border: 2px solid #222;
+    }
+
+    .info {
+      margin-top: 40px;
+      background: #111;
+      padding: 15px 20px;
+      border-left: 3px solid #00ffee;
+      max-width: 400px;
+    }
+
+    footer {
+      grid-area: footer;
+      text-align: center;
+      padding: 10px;
+      background: #0a0a0a;
+      font-size: 0.9em;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Welcome</h1>
+    </header>
+
+    <nav class="sidebar">
+      <ul>
+        <li><a href="#">Neon Dreams</a></li>
+        <li><a href="#">Synth Sunset</a></li>
+        <li><a href="#">Blade City</a></li>
+        <li><a href="#">Dark Mode</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <section class="content">
+        <div class="left">
+          <h2>Neonin takana on yö</h2>
+          <p>
+            Vuorten yllä sykkii aurinko, kuin muistutus menneestä valosta.<br>
+            Sähkölinjat kulkevat ajassa, verkostoina unelmiin kytkettyinä.
+          </p>
+          <p>
+            Kukaan ei kulje täällä enää, vain neonin haamu kertoo tarinaa.<br>
+            Kuka olit, kun valo sammui? Entä kuka sinusta tuli pimeydessä?
+          </p>
+        </div>
+        <div class="right">
+          <img src="Kuvat/Juhanin_Neon.png" alt="Neon landscape">
+        </div>
+      </section>
+
+      <section class="info">
+        <h2>Tietoa</h2>
+        <p>Sivun loi Theryn – yössä kulkija, valon tuoja.</p>
+      </section>
+    </main>
+
+    <footer>
+      <p>© copyright CodeNoctis Industries™</p>
+    </footer>
+  </div>
+</body>
+</html>
