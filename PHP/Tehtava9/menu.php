@@ -6,9 +6,7 @@ $valikko = [
   'Yhteystiedot' => 'yhteystiedot.php',
   'Palaute'      => 'palaute.php'
 ];
-
 $current = basename(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
-
 echo '<nav class="nav"><ul>';
 foreach ($valikko as $nimi => $linkki) {
   $isActive = (basename($linkki) === $current) ? 'active' : '';

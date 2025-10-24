@@ -14,7 +14,6 @@
     <p class="sub">Laadukkaat renkaat joka säähän – edullisesti ja nopeasti.</p>
     <?php include 'menu.php'; ?>
   </header>
-
   <main class="container">
     <section class="card hero">
       <h2>TERVETULOA!</h2>
@@ -25,7 +24,6 @@
       </div>
     </section>
   </main>
-
   <footer class="site-footer">© 2025 Rengaskauppa</footer>
 </div>
 </body>

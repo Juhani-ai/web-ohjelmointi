@@ -137,4 +137,27 @@ footer { margin-top: auto; }
 
 /* Varmistus: kortit keskelle kun halutaan */
 .card.center { margin-left: auto; margin-right: auto; }
+
+/* Estetään, että footer jää ruudun ulkopuolelle */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
+main.page {
+  flex: 1; /* vie kaiken tilan footerin yläpuolella */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* keskittää sisällön pystysuunnassa */
+}
+
+/* Poistetaan liiallinen marginaali korteista */
+.card.center-block {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-bottom: 1rem;
+}
+
 }

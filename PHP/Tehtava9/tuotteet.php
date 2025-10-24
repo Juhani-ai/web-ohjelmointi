@@ -14,11 +14,9 @@
     <p class="sub">Laadukkaat renkaat joka säähän – edullisesti ja nopeasti.</p>
     <?php include 'menu.php'; ?>
   </header>
-
   <main class="container">
     <h2 class="page-title">Tuotteet</h2>
     <p class="lead">Renkaat ympärivuotiseen ajoon.</p>
-
     <div class="grid">
       <article class="card product">
         <h3>Nastarenkaat</h3>
@@ -26,14 +24,12 @@
         <p>Paras pito vaikeisiin talvikeleihin.</p>
         <a class="btn" href="yhteystiedot.php">Kysy saatavuutta</a>
       </article>
-
       <article class="card product">
         <h3>Kitkarenkaat</h3>
         <p class="price">300 € <span>/ sarja</span></p>
         <p>Hiljainen ja mukava talviajovelho.</p>
         <a class="btn" href="yhteystiedot.php">Kysy saatavuutta</a>
       </article>
-
       <article class="card product">
         <h3>Kesärenkaat</h3>
         <p class="price">300 € <span>/ sarja</span></p>
@@ -42,7 +38,6 @@
       </article>
     </div>
   </main>
-
   <footer class="site-footer">© 2025 Rengaskauppa</footer>
 </div>
 </body>
