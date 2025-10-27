@@ -167,3 +167,21 @@ footer {
   background: rgba(0,0,0,0.5);
   margin-top: auto;
 }
+
+.language-switcher {
+  margin-top: 10px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1em;
+}
+
+.language-switcher a {
+  color: #00ffff;
+  text-decoration: none;
+  margin: 0 5px;
+  transition: color 0.2s;
+}
+
+.language-switcher a:hover {
+  color: #ffffff;
+}
