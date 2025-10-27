@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
+/* --- YLEINEN TYYLI --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: radial-gradient(circle at top, #0a0a0a 0%, #000 100%);
+  font-family: 'Orbitron', sans-serif;
+  color: #ddd;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  text-align: center;
+}
+
+/* --- OTSIKOT --- */
+h1, h2, h3 {
+  text-transform: uppercase;
+  text-align: center;
+}
+
+h1 {
+  color: #ff4500;
+  font-size: 2.4rem;
+  margin: 2rem 0 1rem;
+  text-shadow: 0 0 20px #ff2e00, 0 0 50px #ff0000;
+}
+
+h2 {
+  color: #ff00ff;
+  font-size: 1.8rem;
+  margin: 1rem 0 1rem;
+  text-shadow: 0 0 20px #ff00ff, 0 0 40px #a000ff;
+}
+
+h3 {
+  color: #00ffff;
+  font-size: 1.4rem;
+  margin: 2rem 0 1rem;
+  text-shadow: 0 0 15px #00ffff, 0 0 30px #0099ff;
+}
+
+/* --- NAVIGAATIO --- */
+nav {
+  text-align: center;
+  margin: 0 auto 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  box-shadow: 0 0 10px #00ffff80;
+  width: fit-content;
+  padding: 0.5rem 2rem;
+}
+
+nav a {
+  color: #00ffff;
+  text-decoration: none;
+  margin: 0 1rem;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+nav a:hover {
+  color: #fff;
+  text-shadow: 0 0 10px #00ffff;
+}
+
+/* --- SISÄLTÖ --- */
+main {
+  flex: 1;
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding-bottom: 3rem;
+}
+
+p {
+  color: #ccc;
+  margin: 1rem auto;
+  line-height: 1.6;
+  max-width: 800px;
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+  margin: 1rem 0;
+  padding: 0;
+}
+
+ul li {
+  margin: 0.5rem 0;
+}
+
+/* --- GALLERIA --- */
+.galleria {
+  text-align: center;
+  margin: 1.5rem 0;
+}
+
+.galleria a {
+  display: inline-block;
+  margin: 0.5rem;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 10px;
+}
+
+.galleria a:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #00ffff;
+}
+
+.galleria img {
+  width: 220px;
+  height: auto;
+  border-radius: 10px;
+  vertical-align: middle;
+  display: inline-block;
+  filter: brightness(0.9) contrast(1.1);
+  transition: filter 0.3s ease;
+}
+
+.galleria a:hover img {
+  filter: brightness(1.3) contrast(1.3) saturate(1.3);
+}
+
+/* --- YKSIKUVA (keskitetty RoadTripKuva) --- */
+.yksikuva {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.yksikuva img {
+  width: 300px;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.yksikuva img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #00ffff;
+}
+
+/* --- LINKIT YLEISESTI --- */
+a {
+  color: #00ffff;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #fff;
+  text-shadow: 0 0 8px #00ffff;
+}
+
+/* --- FOOTER --- */
+footer {
+  text-align: center;
+  padding: 1rem;
+  color: #888;
+  font-size: 0.9rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  background: rgba(0,0,0,0.5);
+  margin-top: auto;
+}
