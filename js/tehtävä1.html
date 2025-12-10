@@ -1,1 +1,18 @@
-
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ensimmäinen JavaScript-sivu</title>
+</head>
+<body>
+  <h1>Tervetuloa!</h1>
+  <p id="tervehdys"></p>
+  <script>
+    let nimi = "Juhani";
+    let syntymavuosi = 1988;
+    let nykyvuosi = new Date().getFullYear();
+    let ika = nykyvuosi - syntymavuosi;
+    let viesti = `Hei ${nimi}, olet syntynyt vuonna ${syntymavuosi} ja olet nyt ${ika} vuotta vanha.`;
+    document.getElementById("tervehdys").innerText = viesti;
+  </script>
+</body>
+</html>
