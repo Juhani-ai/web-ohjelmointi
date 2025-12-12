@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <title>Palkkalaskuri</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+    }
+    input, button {
+      margin: 5px;
+      padding: 5px;
+    }
+    #tulos {
+      margin-top: 15px;
+      padding: 10px;
+      display: none;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Palkkalaskuri</h1>
+
+  <label>Bruttopalkka (€):</label>
+  <input type="number" id="bruttopalkka" placeholder="Syötä bruttopalkka"><br>
+
+  <label>Veroprosentti (%):</label>
+  <input type="number" id="veroprosentti" placeholder="Syötä veroprosentti"><br>
+
+  <button onclick="laske()">Laske</button>
+
+  <div id="tulos"></div>
+
+  <script>
+    function laske() {
+      let brutto = parseFloat(document.getElementById("bruttopalkka").value);
+      let vero = parseFloat(document.getElementById("veroprosentti").value);
+      let tulosEl = document.getElementById("tulos");
+
+      // Validointi
+      if (isNaN(brutto) || isNaN(vero) || brutto < 0 || vero < 0) {
+        tulosEl.innerText = "Tarkista syöttämäsi tiedot!";
+        tulosEl.style.color = "red";
+        tulosEl.style.display = "block";
+        return;
+      }
+
+      // Laskenta
+      let veronMaara = brutto * (vero / 100);
+      let netto = brutto - veronMaara;
+
+      // Tulostus
+      tulosEl.innerHTML = `
+        Brutto: ${brutto.toFixed(2)} €<br>
+        Vero: ${veronMaara.toFixed(2)} €<br>
+        Netto: ${netto.toFixed(2)} €
+      `;
+
+      // Värit
+      if (netto < 100) {
+        tulosEl.style.color = "orangered";
+      } else {
+        tulosEl.style.color = "green";
+      }
+
+      tulosEl.style.display = "block";
+    }
+  </script>
+</body>
+</html>
