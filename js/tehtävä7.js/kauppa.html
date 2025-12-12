@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <title>Karkkikauppa</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; }
+    .tuote { margin-bottom: 20px; }
+  </style>
+</head>
+<body>
+  <h1>🍬 Karkkikauppa</h1>
+
+  <div class="tuote">
+    <p><strong>Karkki</strong> – 1 €</p>
+    Määrä: <input type="number" id="maara_karkki" value="1" min="1">
+    <button onclick="lisaaKoriin('Karkki', 1, 'maara_karkki')">Lisää koriin</button>
+  </div>
+
+  <div class="tuote">
+    <p><strong>Sipsit</strong> – 2 €</p>
+    Määrä: <input type="number" id="maara_sipsit" value="1" min="1">
+    <button onclick="lisaaKoriin('Sipsit', 2, 'maara_sipsit')">Lisää koriin</button>
+  </div>
+
+  <div class="tuote">
+    <p><strong>Limu</strong> – 3 €</p>
+    Määrä: <input type="number" id="maara_limu" value="1" min="1">
+    <button onclick="lisaaKoriin('Limu', 3, 'maara_limu')">Lisää koriin</button>
+  </div>
+
+  <h2>🛒 Ostoskorisi</h2>
+  <ul id="ostoskoriLista"></ul>
+  <p id="loppusumma">Yhteensä: 0 €</p>
+
+  <script>
+    let ostoskori = [];
+
+    function lisaaKoriin(nimi, hinta, inputId) {
+      const maara = parseInt(document.getElementById(inputId).value);
+      if (isNaN(maara) || maara <= 0) return;
+
+      ostoskori.push({ nimi, hinta, maara });
+      paivitaOstoskori();
+    }
+
+    function paivitaOstoskori() {
+      const lista = document.getElementById("ostoskoriLista");
+      const yhteensa = document.getElementById("loppusumma");
+
+      lista.innerHTML = "";
+      let summa = 0;
+
+      ostoskori.forEach(item => {
+        const rivi = document.createElement("li");
+        rivi.textContent = `${item.maara} x ${item.nimi} = ${item.hinta * item.maara} €`;
+        lista.appendChild(rivi);
+        summa += item.hinta * item.maara;
+      });
+
+      yhteensa.textContent = `Yhteensä: ${summa} €`;
+    }
+  </script>
+</body>
+</html>
