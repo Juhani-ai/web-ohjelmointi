@@ -23,8 +23,11 @@
 <body>
   <h1>Palkkalaskuri</h1>
 
-  <label>Bruttopalkka (€):</label>
-  <input type="number" id="bruttopalkka" placeholder="Syötä bruttopalkka"><br>
+  <label>Tuntipalkka (€):</label>
+  <input type="number" id="tuntipalkka" placeholder="Syötä tuntipalkka"><br>
+
+  <label>Työtunnit (h):</label>
+  <input type="number" id="tunnit" placeholder="Syötä työtunnit"><br>
 
   <label>Veroprosentti (%):</label>
   <input type="number" id="veroprosentti" placeholder="Syötä veroprosentti"><br>
@@ -35,12 +38,13 @@
 
   <script>
     function laske() {
-      let brutto = parseFloat(document.getElementById("bruttopalkka").value);
-      let vero = parseFloat(document.getElementById("veroprosentti").value);
+      let tuntipalkka = parseFloat(document.getElementById("tuntipalkka").value);
+      let tunnit = parseFloat(document.getElementById("tunnit").value);
+      let veroprosentti = parseFloat(document.getElementById("veroprosentti").value);
       let tulosEl = document.getElementById("tulos");
 
       // Validointi
-      if (isNaN(brutto) || isNaN(vero) || brutto < 0 || vero < 0) {
+      if (isNaN(tuntipalkka) || isNaN(tunnit) || isNaN(veroprosentti) || tuntipalkka < 0 || tunnit < 0 || veroprosentti < 0) {
         tulosEl.innerText = "Tarkista syöttämäsi tiedot!";
         tulosEl.style.color = "red";
         tulosEl.style.display = "block";
@@ -48,13 +52,14 @@
       }
 
       // Laskenta
-      let veronMaara = brutto * (vero / 100);
-      let netto = brutto - veronMaara;
+      let brutto = tuntipalkka * tunnit;
+      let vero = brutto * (veroprosentti / 100);
+      let netto = brutto - vero;
 
       // Tulostus
       tulosEl.innerHTML = `
         Brutto: ${brutto.toFixed(2)} €<br>
-        Vero: ${veronMaara.toFixed(2)} €<br>
+        Vero: ${vero.toFixed(2)} €<br>
         Netto: ${netto.toFixed(2)} €
       `;
 
