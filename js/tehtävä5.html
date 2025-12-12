@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Auto-olio</title>
+</head>
+<body>
+  <h1>Tehtävä 5 – Auto-olio</h1>
+  <button onclick="auto.naytaTiedot()">Näytä auton tiedot</button>
+  <button onclick="auto.kaynnista()">Käynnistä auto</button>
+
+  <p id="tulostus"></p>
+
+  <script>
+    const auto = {
+      merkki: "Mazda",
+      malli: "RX-8",
+      vuosi: 2008,
+      kaynnissa: false,
+
+      naytaTiedot: function() {
+        let teksti = `Merkki: ${this.merkki} <br>
+                      Malli: ${this.malli} <br>
+                      Vuosi: ${this.vuosi} <br>
+                      Käynnissä: ${this.kaynnissa ? "Kyllä" : "Ei"}`;
+        document.getElementById("tulostus").innerHTML = teksti;
+      },
+
+      kaynnista: function() {
+        this.kaynnissa = true;
+        document.getElementById("tulostus").innerHTML = "Auto on nyt käynnissä.";
+      }
+    };
+  </script>
+</body>
+</html>
