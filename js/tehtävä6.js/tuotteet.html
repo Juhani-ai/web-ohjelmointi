@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <title>Tuotteet</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+    }
+
+    #nav-lista {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      background-color: #333;
+      overflow: hidden;
+    }
+
+    #nav-lista li {
+      float: left;
+    }
+
+    #nav-lista li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    #nav-lista li a:hover {
+      background-color: #111;
+    }
+
+    .active {
+      background-color: #04AA6D !important;
+    }
+  </style>
+</head>
+<body>
+  <h1>Tuotteet</h1>
+
+  <ul id="nav-lista"></ul>
+
+  <h2>Valikoima</h2>
+  <ul>
+    <li>🌟 Neon Master 3000 - Katujen kuningas</li>
+    <li>⚡ TurboGlow Lightbar - Täydellinen retromaisemiin</li>
+    <li>💿 VHSPlayer 9000 - Katso menneisyys uudelleen</li>
+    <li>🎧 Lucian Signature Headphones - Kuuntele kuten Prinssi itse</li>
+  </ul>
+
+  <script>
+    const sivut = [
+      { nimi: "Etusivu", url: "navigaatio.html" },
+      { nimi: "Tuotteet", url: "tuotteet.html" },
+      { nimi: "Yhteystiedot", url: "yhteystiedot.html" }
+    ];
+
+    const nykyinenSivu = window.location.pathname.split("/").pop();
+    const navUl = document.getElementById("nav-lista");
+
+    sivut.forEach(sivu => {
+      const li = document.createElement("li");
+      const a = document.createElement("a");
+      a.href = sivu.url;
+      a.textContent = sivu.nimi;
+
+      if (sivu.url === nykyinenSivu) {
+        a.classList.add("active");
+      }
+
+      li.appendChild(a);
+      navUl.appendChild(li);
+    });
+  </script>
+</body>
+</html>
